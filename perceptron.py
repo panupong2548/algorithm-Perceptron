@@ -46,7 +46,7 @@ if __name__ == "__main__":
         [1, 0],
         [1, 1]
         ])
-    y = np.array([0, 1, 1, 1])
+    y = np.array([0, 0, 0, 1])
 
     # สร้างและเทรนโมเดล
     p = Perceptron(learning_rate=0.1, n_iterations=10)
