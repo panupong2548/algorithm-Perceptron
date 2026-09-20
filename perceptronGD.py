@@ -110,10 +110,21 @@ if __name__ == "__main__":
     X, y = make_classification(n_samples=100, n_features=2, n_redundant=0, 
                                n_informative=2, random_state=42, n_clusters_per_class=1)
 
+    print(f"X: {X}")
+    print(f"y: {y}")
+
     # เทรนโมเดล Batch Gradient Descent
     classifier = PerceptronGD(eta=0.01, n_iter=15, random_state=42)
     classifier.fit(X, y)
-
+     # 3. แสดงผลจำนวนความผิดพลาดในแต่ละรอบ (Epoch)
+    print("จำนวนความผิดพลาดในแต่ละรอบ (Errors):", classifier.errors_)
+    print("ค่าน้ำหนักสุดท้าย (Weights):", classifier.w_)
+    print("ค่าไบแอสสุดท้าย (Bias):", classifier.b_)
+    
+    # 4. ทดสอบทำนายข้อมูลใหม่
+    X_test = np.array([[2.5, 3.1], [-1.2, -2.5],[1.5,-5.3],[-2.3,4.0],[1.0,2.0],[5.0,-5.0]]) #ฟีเจอร์ 2 ติดลบ = 0
+    predictions = classifier.predict(X_test)
+    print("ผลการทำนายข้อมูลใหม่:", predictions)
     # จัดหน้าจอแสดงผล 2 กราฟคู่กัน
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 5))
 
