@@ -1,0 +1,22 @@
+#Python virtual environment 
+.venv/
+venv/
+env/
+
+#Python cache files
+__pycache__/
+*.py[cod]
+
+#jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+#environment variables
+.env
+.env.*
+
+#IDE files
+.vscode/
+.idea/
+
+data/*
+!data/sales_data.csv
