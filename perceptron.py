@@ -39,7 +39,7 @@ class Perceptron:
         return self.activation(linear_output)
 
 if __name__ == "__main__":
-    # ข้อมูลจำลอง AND Gate
+    # ข้อมูลจำลอง AND Gate Not XOR gate 
     X = np.array([
         [0, 0],
         [0, 1],
@@ -47,13 +47,14 @@ if __name__ == "__main__":
         [1, 1]
         ])
     y = np.array([0, 0, 0, 1])
+    z = np.array([[1,1],[0,1],[1,1]])
 
     # สร้างและเทรนโมเดล
     p = Perceptron(learning_rate=0.1, n_iterations=10)
     p.fit(X, y)
 
     # ทดสอบการทำนาย
-    predictions = p.predict(X)
+    predictions = p.predict(z)
     print("ผลลัพธ์การทำนาย:", predictions)
     print("Weights ที่ได้:", p.weights)
     print("Bias ที่ได้:", p.bias)
